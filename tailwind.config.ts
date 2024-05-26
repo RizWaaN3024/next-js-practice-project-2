@@ -12,7 +12,8 @@ const config: Config = {
       colors: {
         black: {
           DEFAULT: "#000",
-          100: "#01041e"
+          100: "#0A0A0A",
+          200: "#000314"
         }
       }
     },
