@@ -18,7 +18,7 @@ const Navbar = () => {
   };
   console.log(toggle);
   return (
-    <div className=" w-full md:p-3 p-5  flex items-center justify-between">
+    <div className=" w-full md:p-3 p-5  flex items-center justify-between hover:cursor-pointer">
       <img src="/logo-no-background.svg" alt="my-logo" width={44} height={44} />
       {/* Desktop Navigation */}
       <div className="hidden md:flex">
@@ -43,7 +43,9 @@ const Navbar = () => {
       
       {/* Mobile Navigation */}
       {toggle && (
-        <div className="md:hidden fixed inset-0 w-full top-20 bg-black-200">
+        <div className={`md:hidden fixed inset-0 w-full top-20 transition-transform duration-500 ${
+          toggle ? "translate-y-0" : "-translate-y-full"
+        }`} style={{backgroundColor: '#010831'}}>
           <div>
             <ul className="flex flex-col items-center justify-between gap-5 text-xl font-semibold">
               {navigation.map((item) => (
@@ -56,7 +58,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex item-center justify-center mt-5">
-             <MagicButton title="Resume" otherClasses="cursor-pointer px-20 text-2xl" />
+             <MagicButton title="Resume" otherClasses="cursor-pointer text-3xl px-30" />
           </div>
         </div>
       )}
