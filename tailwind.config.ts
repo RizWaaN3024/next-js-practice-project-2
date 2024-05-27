@@ -13,7 +13,8 @@ const config: Config = {
         black: {
           DEFAULT: "#000",
           100: "#0A0A0A",
-          200: "#000314"
+          200: "#000314",
+          300: "#000319"
         },
         purple: "#CBACF9",
       },
