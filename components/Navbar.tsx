@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import MagicButton from "./ui/MagicButton";
 import {enablePageScroll, disablePageScroll} from 'scroll-lock';
 import { RiCloseLine } from "react-icons/ri";
+import ThemeToggler from "./ThemeToggler";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -18,21 +19,21 @@ const Navbar = () => {
   };
   console.log(toggle);
   return (
-    <div className=" w-full md:p-3 p-5  flex items-center justify-between hover:cursor-pointer">
+    <div className=" w-full md:p-3 p-5  flex items-center justify-between">
       <img src="/logo-no-background.svg" alt="my-logo" width={44} height={44} />
       {/* Desktop Navigation */}
       <div className="hidden md:flex">
-        <ul className="flex items-center justify-between gap-12 text-l">
+        <ul className="flex items-center justify-between gap-20 text-xl">
           {navigation.map((item) => (
-            <a href="" key={item.id}>
+            <a href={item.url} key={item.id} className="hover:text-purple  hover:transition-transform hover:cursor-pointer">
               <li>{item.title}</li>
             </a>
           ))}
         </ul>
       </div>
-      <div className="hidden md:flex">
-        <MagicButton title="Resume" otherClasses="cursor-pointer px-8" />
-      </div>
+      <ThemeToggler />
+      
+      
       {toggle ? 
          <RiCloseLine className="text-4xl md:hidden" onClick={handleToggle} />: <div className="flex flex-col gap-1.5 md:hidden" onClick={handleToggle}>
          <div className="w-7 bg-white border h-0.8"></div>
