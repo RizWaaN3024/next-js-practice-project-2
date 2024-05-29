@@ -33,8 +33,9 @@ export default function RootLayout({
           // enableSystem
           // disableTransitionOnChange
         >
-          <Header />
+          {/* <Header /> */}
           {loading && <PreLoader setLoading={setLoading} />}
+          {!loading && <Header />}
           {!loading && children}
         </ThemeProvider>
       </body>
