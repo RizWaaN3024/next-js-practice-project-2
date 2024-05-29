@@ -4,26 +4,26 @@ export const navigation = [
     {
         id: "0",
         title: "Home",
-        url: "#home",
+        path: "/",
     },
     {
         id: "1",
         title: "Project",
-        url: "#project",
+        path: "/project",
     },
     {
         id: "2",
         title: "Blog",
-        url: "#blog"
+        path: "/blog"
     },
     {
         id: "3",
         title: "About",
-        url: "#about"
+        path: "/about"
     },
     {
         id: "4",
         title: "Contact",
-        url: "#contact"
+        path: "/contact"
     }
 ]

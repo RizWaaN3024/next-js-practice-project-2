@@ -28,9 +28,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
+          defaultTheme="light"
+          // enableSystem
+          // disableTransitionOnChange
         >
           {loading && <PreLoader setLoading={setLoading} />}
           {!loading && children}

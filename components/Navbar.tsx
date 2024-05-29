@@ -1,13 +1,17 @@
 "use client";
 import { navigation } from "@/data";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MagicButton from "./ui/MagicButton";
 import {enablePageScroll, disablePageScroll} from 'scroll-lock';
 import { RiCloseLine } from "react-icons/ri";
 import ThemeToggler from "./ThemeToggler";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import {motion} from 'framer-motion';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [header, setHeader] = useState(false);
   const handleToggle = () => {
     if (toggle) {
         setToggle(false);
@@ -17,17 +21,40 @@ const Navbar = () => {
         disablePageScroll();
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY > 50 ? setHeader(true) : setHeader(false);
+    }
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  })
+  const path = usePathname();
+  console.log(path);
   console.log(toggle);
   return (
-    <div className=" w-full md:p-3 p-5  flex items-center justify-between">
+    <div className={` transition-all top-0 z-30 w-full md:p-3 p-5  flex items-center justify-between ${header ? 'py-4 bg-white shadow-lg dark:bg-accent': 'py-6 dark:bg-transparent'}`}>
       <img src="/logo-no-background.svg" alt="my-logo" width={44} height={44} />
       {/* Desktop Navigation */}
       <div className="hidden md:flex">
         <ul className="flex items-center justify-between gap-20 text-xl">
           {navigation.map((item) => (
-            <a href={item.url} key={item.id} className="hover:text-purple  hover:transition-transform hover:cursor-pointer">
-              <li>{item.title}</li>
-            </a>
+            <Link 
+              href={item.path}
+              key={item.id}
+              className={`capitalize`}
+            >
+              {item.path === path && (
+                <motion.span 
+                  initial={{y: '-100%'}}
+                  animate={{y: 0}}
+                  transition={{type: 'tween'}}
+                  className="relative hover:text-primary transition-all"
+                />
+              )}
+              {item.title}
+            </Link>
           ))}
         </ul>
       </div>
