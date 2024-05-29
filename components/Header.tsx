@@ -22,20 +22,17 @@ const Header = () => {
         return ()=> window.removeEventListener('scroll', handleScroll);
     })
   return (
-    <header className={`${header ? 'py-4 bg-white shadow-lg dark:bg-accent' : 'py-6 dark:bg-transparent'} sticky z-30 top-0 transition-all`}>
+    <header className={`${header ? 'py-4 bg-white shadow-lg dark:bg-accent' : 'py-6 dark:bg-transparent'} sticky z-30 top-0 transition-all dark:bg-none bg-secondary-foreground`}>
       <div className='container mx-auto'>
         <div className='flex justify-between items-center'>
             <Link href={"/"}>
-                {theme === 'dark' ? 
                     <img src="/logo-no-background.svg" width={40} height={40} alt="" /> 
-                    : <img src="/logo-black.svg" width={40} height={40} alt="" />
-            }
             </Link>
             <div>
                 <Nav 
                     containerStyles={`hidden xl:flex gap-x-14 item-center`}
-                    linkStyles={`relative hover:text-primary transition-all`}
-                    underLineStyles={`absolute left-0 top-full h-[2px] bg-primary w-full`}
+                    linkStyles={`relative hover:text-purple-300 text-white transition-all text-bold`}
+                    underLineStyles={`absolute left-0 top-full h-[2px] bg-white w-full`}
                 />
             </div>
             <ThemeToggler />
