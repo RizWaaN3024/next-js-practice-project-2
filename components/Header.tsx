@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import Nav from './Nav';
 import ThemeToggler from './ThemeToggler';
 import { useTheme } from 'next-themes';
+import MobileNav from './MobileNav';
 
 const Header = () => {
     const {theme, setTheme} = useTheme();
@@ -35,7 +36,13 @@ const Header = () => {
                     underLineStyles={`absolute left-0 top-full h-[2px] bg-white w-full`}
                 />
             </div>
+            <div className='flex items-center gap-x-5'>
             <ThemeToggler />
+            <div className='xl:hidden'>
+              <MobileNav />
+            </div>
+            </div>
+            
         </div>
       </div>
     </header>
