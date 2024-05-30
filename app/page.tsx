@@ -1,14 +1,17 @@
 import Hero from "@/components/Hero";
 import { MyGallery } from "@/components/MyGallery";
-import SocialIcons from "@/components/SocialIcons";
-import { BackgroundGradientAnimation } from "@/components/ui/BackgroundGradientAnimation";
-import Image from "next/image";
+import { WavyBackground } from "@/components/ui/WavyBackground";
+import { useTheme } from "next-themes";
 
 export default function Home() {
+
   return (
     <main>
       {/* <BackgroundGradientAnimation className="max-w-7xl w-full mx-auto">  */}
+      <WavyBackground>
       <Hero />
+      </WavyBackground>
+      
       {/* </BackgroundGradientAnimation> */}
       <div className="max-w-7xl w-full mx-auto">
         <MyGallery />

@@ -22,7 +22,7 @@ const Header = () => {
         return ()=> window.removeEventListener('scroll', handleScroll);
     })
   return (
-    <header className={`${header ? 'py-4 bg-white shadow-lg dark:bg-accent' : 'py-6 dark:bg-transparent'} sticky z-30 top-0 transition-all dark:bg-none bg-secondary-foreground`}>
+    <header className={`${header ? 'py-4 bg-primary shadow-lg dark:bg-accent' : 'py-6 dark:bg-transparent'} sticky z-30 top-0 transition-all dark:bg-none bg-secondary-foreground`}>
       <div className='container mx-auto'>
         <div className='flex justify-between items-center'>
             <Link href={"/"}>
