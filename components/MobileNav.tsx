@@ -19,7 +19,7 @@ const MobileNav = () => {
                     underLineStyles=''
                 />
             </div>
-            <SocialIcons />
+            <SocialIcons className=''/>
         </div>
       </SheetContent>
     </Sheet>

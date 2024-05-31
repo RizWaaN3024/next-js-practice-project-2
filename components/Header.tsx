@@ -31,7 +31,7 @@ const Header = () => {
             </Link>
             <div>
                 <Nav 
-                    containerStyles={`hidden xl:flex gap-x-14 item-center`}
+                    containerStyles={`hidden md:flex gap-x-14 item-center`}
                     linkStyles={`relative hover:text-purple-300 text-white transition-all text-bold`}
                     underLineStyles={`absolute left-0 top-full h-[2px] bg-white w-full`}
                 />

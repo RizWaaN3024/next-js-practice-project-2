@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <main>
       {/* <BackgroundGradientAnimation className="max-w-7xl w-full mx-auto">  */}
-      <WavyBackground>
+      {/* <WavyBackground> */}
       <Hero />
-      </WavyBackground>
+      {/* </WavyBackground> */}
       
       {/* </BackgroundGradientAnimation> */}
       <div className="max-w-7xl w-full mx-auto">
