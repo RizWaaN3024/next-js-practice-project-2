@@ -21,21 +21,21 @@ const Hero = () => {
     }
   ]
   return (
-    <section className='container relative'>
+    <section className='container relative py-16'>
       <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
           fill="white"
         />
-        <Spotlight
+        {/* <Spotlight
           className="top-10 left-full h-[80vh] w-[50vw]"
           fill="purple"
-        />
-        <Spotlight
+        /> */}
+        {/* <Spotlight
           className="-top-40 -right-10 md:left-1/4 md:-top-20 h-screen"
           fill="white"
-        />
+        /> */}
       <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
-      <div className='px-5 md:px-0 md:flex flex-col items-center justify-center tracking-wide pt-40'>
+      <div className='px-5 md:px-0 md:flex flex-col items-center justify-center tracking-wide pt-20'>
       <h1 className='text-xl dark:text-primary'>Hi I&apos;m <span className='font-semibold dark:text-purple-300'>Rizwaan Ansari</span> </h1>
         <TypewriterEffect words={words} className='pt-5 text-white'/>
           <h1 className='pt-8 md:pt-2 text-4xl'>
@@ -52,7 +52,7 @@ const Hero = () => {
         {/*  */}
       </div>
       <SocialIcons className={`mt-5 dark:text-primary text-white`}/>
-      <div className='hidden md:flex absolute left-2/4 bottom-44 xl:-bottom-28 animate-bounce'>
+      <div className='hidden md:flex absolute left-2/4 bottom-44 xl:-bottom-16 animate-bounce'>
         <RiArrowDownSLine className='text-3xl text-primary' />
       </div>
       </div>
